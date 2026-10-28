@@ -4,8 +4,8 @@
 -- ============================================================================
 
 -- 1. Buat Database
-CREATE DATABASE IF NOT EXISTS db_mahasiswa CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE db_mahasiswa;
+CREATE DATABASE IF NOT EXISTS db_mahasiswa2 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE db_mahasiswa2;
 
 -- 2. Buat Tabel Mahasiswa
 CREATE TABLE IF NOT EXISTS mahasiswa (
@@ -27,3 +27,4 @@ INSERT INTO mahasiswa (npm, nama, program_studi, angkatan, email) VALUES
 ('240101020', 'Dewi Lestari', 'Rekayasa Perangkat Lunak', 2024, 'dewi.lestari@example.com')
 ON DUPLICATE KEY UPDATE npm=npm;
 
+DESCRIBE mahasiswa;

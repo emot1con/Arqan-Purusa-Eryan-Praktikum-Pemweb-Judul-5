@@ -7,7 +7,7 @@
 
 class Database {
     private string $host = '127.0.0.1';
-    private string $db_name = 'db_mahasiswa';
+    private string $db_name = 'db_mahasiswa2';
     private string $username = 'root';
     private string $password = '';
     private int $port = 3306;
@@ -28,7 +28,13 @@ class Database {
                 PDO::ATTR_EMULATE_PREPARES   => false,
             ];
 
-           // Percobaan 5-1 Langkah 4
+           try {
+                        $this->conn = new PDO($dsn, $this->username,
+                        $this->password, $options);
+           } catch (PDOException $e) {
+            throw new PDOException("Koneksi ke database gagal: " .
+            $e->getMessage(), (int)$e->getCode());
+           }
            
         }
 
